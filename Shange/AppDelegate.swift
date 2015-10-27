@@ -12,10 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var initialViewController :UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        initialViewController  = ViewController()
+        
+        let frame = UIScreen.mainScreen().bounds
+        window = UIWindow(frame: frame)
+        
+        window!.rootViewController = initialViewController
+        window!.makeKeyAndVisible()
+        
+
+        
+        
         return true
     }
 

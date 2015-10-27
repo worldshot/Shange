@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C107A3981BDF17650027DAD6 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C107A3971BDF17650027DAD6 /* IntExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		C10B80E01BD9CDD00044F2CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B80DF1BD9CDD00044F2CD /* AppDelegate.swift */; };
 		C10B80E21BD9CDD00044F2CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B80E11BD9CDD00044F2CD /* ViewController.swift */; };
-		C10B80E51BD9CDD00044F2CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10B80E31BD9CDD00044F2CD /* Main.storyboard */; };
 		C10B80E71BD9CDD00044F2CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10B80E61BD9CDD00044F2CD /* Assets.xcassets */; };
 		C10B80EA1BD9CDD00044F2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10B80E81BD9CDD00044F2CD /* LaunchScreen.storyboard */; };
 		C10B80F51BD9CDD10044F2CD /* ShangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B80F41BD9CDD10044F2CD /* ShangeTests.swift */; };
@@ -34,10 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C107A3971BDF17650027DAD6 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		C10B80DC1BD9CDD00044F2CD /* Shange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10B80DF1BD9CDD00044F2CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C10B80E11BD9CDD00044F2CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C10B80E41BD9CDD00044F2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C10B80E61BD9CDD00044F2CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C10B80E91BD9CDD00044F2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C10B80EB1BD9CDD00044F2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,10 +99,10 @@
 			children = (
 				C10B80DF1BD9CDD00044F2CD /* AppDelegate.swift */,
 				C10B80E11BD9CDD00044F2CD /* ViewController.swift */,
-				C10B80E31BD9CDD00044F2CD /* Main.storyboard */,
 				C10B80E61BD9CDD00044F2CD /* Assets.xcassets */,
 				C10B80E81BD9CDD00044F2CD /* LaunchScreen.storyboard */,
 				C10B80EB1BD9CDD00044F2CD /* Info.plist */,
+				C107A3971BDF17650027DAD6 /* IntExtension.swift */,
 			);
 			path = Shange;
 			sourceTree = "<group>";
@@ -230,7 +230,6 @@
 			files = (
 				C10B80EA1BD9CDD00044F2CD /* LaunchScreen.storyboard in Resources */,
 				C10B80E71BD9CDD00044F2CD /* Assets.xcassets in Resources */,
-				C10B80E51BD9CDD00044F2CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +256,7 @@
 			files = (
 				C10B80E21BD9CDD00044F2CD /* ViewController.swift in Sources */,
 				C10B80E01BD9CDD00044F2CD /* AppDelegate.swift in Sources */,
+				C107A3981BDF17650027DAD6 /* IntExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,14 +292,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C10B80E31BD9CDD00044F2CD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C10B80E41BD9CDD00044F2CD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C10B80E81BD9CDD00044F2CD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -483,6 +475,7 @@
 				C10B81061BD9CDD10044F2CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C10B81071BD9CDD10044F2CD /* Build configuration list for PBXNativeTarget "ShangeTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +484,7 @@
 				C10B81091BD9CDD10044F2CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C10B810A1BD9CDD10044F2CD /* Build configuration list for PBXNativeTarget "ShangeUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +493,7 @@
 				C10B810C1BD9CDD10044F2CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
