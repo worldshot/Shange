@@ -32,6 +32,8 @@
 		C10B80EA1BD9CDD00044F2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10B80E81BD9CDD00044F2CD /* LaunchScreen.storyboard */; };
 		C10B80F51BD9CDD10044F2CD /* ShangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B80F41BD9CDD10044F2CD /* ShangeTests.swift */; };
 		C10B81001BD9CDD10044F2CD /* ShangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B80FF1BD9CDD10044F2CD /* ShangeUITests.swift */; };
+		C18CB6F71BE101AD008C2B79 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CB6F61BE101AD008C2B79 /* CollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		C18CB6F91BE124A6008C2B79 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CB6F81BE124A6008C2B79 /* AuthViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		C10B80FB1BD9CDD10044F2CD /* ShangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10B80FF1BD9CDD10044F2CD /* ShangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShangeUITests.swift; sourceTree = "<group>"; };
 		C10B81011BD9CDD10044F2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C18CB6F61BE101AD008C2B79 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C18CB6F81BE124A6008C2B79 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 				C10B80E81BD9CDD00044F2CD /* LaunchScreen.storyboard */,
 				C10B80EB1BD9CDD00044F2CD /* Info.plist */,
 				C107A3971BDF17650027DAD6 /* IntExtension.swift */,
+				C18CB6F61BE101AD008C2B79 /* CollectionViewCell.swift */,
+				C18CB6F81BE124A6008C2B79 /* AuthViewController.swift */,
 			);
 			path = Shange;
 			sourceTree = "<group>";
@@ -376,11 +382,13 @@
 				C107A3C91BE074540027DAD6 /* AFHTTPRequestOperationManager.m in Sources */,
 				C107A3CD1BE074540027DAD6 /* AFURLConnectionOperation.m in Sources */,
 				C107A3D51BE074540027DAD6 /* UIImageView+AFNetworking.m in Sources */,
+				C18CB6F71BE101AD008C2B79 /* CollectionViewCell.swift in Sources */,
 				C107A3C81BE074540027DAD6 /* AFHTTPRequestOperation.m in Sources */,
 				C107A3D21BE074540027DAD6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C107A3981BDF17650027DAD6 /* IntExtension.swift in Sources */,
 				C107A3CE1BE074540027DAD6 /* AFURLRequestSerialization.m in Sources */,
 				C107A3CA1BE074540027DAD6 /* AFHTTPSessionManager.m in Sources */,
+				C18CB6F91BE124A6008C2B79 /* AuthViewController.swift in Sources */,
 				C107A3CB1BE074540027DAD6 /* AFNetworkReachabilityManager.m in Sources */,
 				C107A3CF1BE074540027DAD6 /* AFURLResponseSerialization.m in Sources */,
 				C107A3D81BE074540027DAD6 /* UIWebView+AFNetworking.m in Sources */,

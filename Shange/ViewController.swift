@@ -12,10 +12,12 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
 
     var collectionView: UICollectionView!
     
+    var imagesArray: NSMutableArray!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.redColor();
+        self.view.backgroundColor = UIColor.whiteColor();
         
         let layout:CHTCollectionViewWaterfallLayout = CHTCollectionViewWaterfallLayout()
         
@@ -26,9 +28,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.yellowColor()
+        collectionView.backgroundColor = UIColor.clearColor()
         collectionView.delegate = self
-        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.alwaysBounceVertical = true
         // Add the waterfall layout to your collection view
         collectionView.collectionViewLayout = layout
@@ -36,14 +38,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         collectionView.alwaysBounceVertical = true
         self.view.addSubview(collectionView)
         
-        /*
-        http://lorempixel.com/400/200 to get a random picture of 400 x 200 pixels
-        http://lorempixel.com/g/400/200 to get a random gray picture of 400 x 200 pixels
-        http://lorempixel.com/400/200/sports to get a random picture of the sports category
-        http://lorempixel.com/400/200/sports/1 to get picture no. 1/10 from the sports category
-        http://lorempixel.com/400/200/sports/Dummy-Text with a custom text on the random Picture
-        http://lorempixel.com/400/200/sports/1/Dummy-Text
-    */
+        imagesArray = ["http://lorempixel.com/400/200","http://lorempixel.com/g/400/200","http://lorempixel.com/400/200/nightlife/5","http://lorempixel.com/400/200/sports/1","http://lorempixel.com/400/200/sports/2","http://lorempixel.com/400/200/sports/3","http://lorempixel.com/400/200/nightlife/4","http://lorempixel.com/400/200/sports/5","http://lorempixel.com/400/200/sports/6","http://lorempixel.com/400/200/sports/7","http://lorempixel.com/400/200/sports/10","http://lorempixel.com/400/200/sports/8","http://lorempixel.com/400/200/sports/9","http://lorempixel.com/400/200/sports/Dummy-Text","http://lorempixel.com/400/200/sports/1/Dummy-Text","http://lorempixel.com/400/200/nightlife/3","http://lorempixel.com/400/200/nightlife/1","http://lorempixel.com/400/200/nightlife/2"]
+        collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,18 +49,26 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
 
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return imagesArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.lightGrayColor()
-        cell.layer.borderColor = UIColor.redColor().CGColor
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollectionViewCell
+        
+        let url = imagesArray.objectAtIndex(indexPath.row) as! String
+        cell.backgroundColor = UIColor.clearColor()
+        cell.layer.borderColor = UIColor.lightGrayColor().CGColor
         cell.layer.borderWidth = 1.0
         cell.contentView.frame = cell.bounds
         cell.contentView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        let fullUrl:NSURL = NSURL(string: url)!
+        cell.imageView.layer.masksToBounds = true;
+        cell.imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        cell.imageView.setImageWithURL(fullUrl)
+        cell.imageView.setNeedsDisplay()
         return cell
     }
+    
     
     func collectionView(_collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -72,7 +76,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     {
         let height = Int.random(100...200)
         let size = CGSizeMake(self.view.frame.size.width / 2 - 10, CGFloat(height))
-        print(size)
         return size
     }
 }
