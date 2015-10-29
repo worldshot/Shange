@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout {
+class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,AuthViewControllerDelegate {
 
     var collectionView: UICollectionView!
     
     var imagesArray: NSMutableArray!
+    let authView = AuthViewController();
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,19 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
         imagesArray = ["http://lorempixel.com/400/200","http://lorempixel.com/g/400/200","http://lorempixel.com/400/200/nightlife/5","http://lorempixel.com/400/200/sports/1","http://lorempixel.com/400/200/sports/2","http://lorempixel.com/400/200/sports/3","http://lorempixel.com/400/200/nightlife/4","http://lorempixel.com/400/200/sports/5","http://lorempixel.com/400/200/sports/6","http://lorempixel.com/400/200/sports/7","http://lorempixel.com/400/200/sports/10","http://lorempixel.com/400/200/sports/8","http://lorempixel.com/400/200/sports/9","http://lorempixel.com/400/200/sports/Dummy-Text","http://lorempixel.com/400/200/sports/1/Dummy-Text","http://lorempixel.com/400/200/nightlife/3","http://lorempixel.com/400/200/nightlife/1","http://lorempixel.com/400/200/nightlife/2"]
         collectionView.reloadData()
+        
+        authView.delegate = self
+        
+        self.navigationController?.presentViewController(authView, animated: true, completion: { () -> Void in
+            
+        })
+    }
+    
+    func unloadAuthScreen()
+    {
+        authView.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

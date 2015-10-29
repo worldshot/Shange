@@ -11,4 +11,6 @@
 
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
+#import "Defines.h"
+
 #endif /* shange_bridge_h */

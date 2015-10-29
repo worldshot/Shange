@@ -34,6 +34,7 @@
 		C10B81001BD9CDD10044F2CD /* ShangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B80FF1BD9CDD10044F2CD /* ShangeUITests.swift */; };
 		C18CB6F71BE101AD008C2B79 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CB6F61BE101AD008C2B79 /* CollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		C18CB6F91BE124A6008C2B79 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CB6F81BE124A6008C2B79 /* AuthViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C19E07C01BE2A845004154FE /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E07BF1BE2A845004154FE /* StateMachine.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		C10B81011BD9CDD10044F2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C18CB6F61BE101AD008C2B79 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C18CB6F81BE124A6008C2B79 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		C19E07BF1BE2A845004154FE /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		C19E07C11BE2A94D004154FE /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,8 @@
 				C107A3971BDF17650027DAD6 /* IntExtension.swift */,
 				C18CB6F61BE101AD008C2B79 /* CollectionViewCell.swift */,
 				C18CB6F81BE124A6008C2B79 /* AuthViewController.swift */,
+				C19E07BF1BE2A845004154FE /* StateMachine.swift */,
+				C19E07C11BE2A94D004154FE /* Defines.h */,
 			);
 			path = Shange;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				C18CB6F91BE124A6008C2B79 /* AuthViewController.swift in Sources */,
 				C107A3CB1BE074540027DAD6 /* AFNetworkReachabilityManager.m in Sources */,
 				C107A3CF1BE074540027DAD6 /* AFURLResponseSerialization.m in Sources */,
+				C19E07C01BE2A845004154FE /* StateMachine.swift in Sources */,
 				C107A3D81BE074540027DAD6 /* UIWebView+AFNetworking.m in Sources */,
 				C107A3D01BE074540027DAD6 /* AFURLSessionManager.m in Sources */,
 				C107A3D11BE074540027DAD6 /* AFNetworkActivityIndicatorManager.m in Sources */,
