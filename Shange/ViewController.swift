@@ -8,22 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,AuthViewControllerDelegate {
+class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,AuthViewControllerDelegate,UITableViewDataSource,UITableViewDelegate {
 
+    var chainsTable: UITableView!
+    
     var collectionView: UICollectionView!
     
     var imagesArray: NSMutableArray!
     let authView = AuthViewController();
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
+        //self.navigationController?.navigationBarHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.whiteColor();
+        
+        chainsTable = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 150), style: UITableViewStyle.Plain)
+        chainsTable.delegate = self
+        chainsTable.dataSource = self
+        self.view.addSubview(chainsTable)
+        chainsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 19, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+        //chainsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 20, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         
         let layout:CHTCollectionViewWaterfallLayout = CHTCollectionViewWaterfallLayout()
         
@@ -32,7 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         layout.minimumInteritemSpacing = 1.0
         //layout.itemSize = CGSize(width: self.view.frame.size.width / 2 - 10, height: 120)
         
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 150, width: self.view.frame.size.width, height: self.view.frame.size.height - 150), collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.delegate = self
@@ -49,9 +63,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
         authView.delegate = self
         
-        self.navigationController?.presentViewController(authView, animated: true, completion: { () -> Void in
+        /*self.navigationController?.presentViewController(authView, animated: true, completion: { () -> Void in
             
-        })
+        })*/
     }
     
     func unloadAuthScreen()
@@ -82,9 +96,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         cell.contentView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         let fullUrl:NSURL = NSURL(string: url)!
         cell.imageView.layer.masksToBounds = true;
-        cell.imageView.contentMode = UIViewContentMode.ScaleAspectFill
         cell.imageView.setImageWithURL(fullUrl)
-        cell.imageView.setNeedsDisplay()
+        cell.imageView.contentMode = UIViewContentMode.ScaleAspectFill
         return cell
     }
     
@@ -97,5 +110,47 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         let size = CGSizeMake(self.view.frame.size.width / 2 - 10, CGFloat(height))
         return size
     }
+    
+    
+
+//////////////////TABLEVIEW DELEGATE///////////////////
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    // #warning Incomplete implementation, return the number of sections
+    return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 20
+    }
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+       
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")
+        
+        if(cell == nil){
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "reuseIdentifier")
+            cell.backgroundColor = UIColor.whiteColor()
+            
+        }
+        
+       cell.textLabel?.text = String(indexPath.row)
+    
+        
+        return cell
+    }
+    
 }
 

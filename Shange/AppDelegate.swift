@@ -14,21 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var initialViewController :UIViewController?
     var rootNavController :UINavigationController!
+    var menuNavController :UINavigationController!
+    var menuVC :MenuViewController!
+    
+    
     var menuButton :UIButton!
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
         initialViewController  = ViewController()
         rootNavController = UINavigationController(rootViewController: initialViewController!)
         rootNavController.view.backgroundColor = UIColor.clearColor()
+        
+        
+        menuVC = MenuViewController()
+        menuNavController = UINavigationController(rootViewController: menuVC!)
+        menuNavController.view.backgroundColor = UIColor.clearColor()
+        
         let frame = UIScreen.mainScreen().bounds
         window = UIWindow(frame: frame)
         
-        window!.rootViewController = rootNavController
+        window!.rootViewController = splitRooVC
         window!.makeKeyAndVisible()
-        
-        
-        self.showMenuButton()
         
         return true
     }
