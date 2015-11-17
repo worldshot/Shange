@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let frame = UIScreen.mainScreen().bounds
         window = UIWindow(frame: frame)
         
-        window!.rootViewController = splitRooVC
+        window!.rootViewController = initialViewController
         window!.makeKeyAndVisible()
         
         return true

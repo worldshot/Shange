@@ -36,7 +36,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         chainsTable.delegate = self
         chainsTable.dataSource = self
         self.view.addSubview(chainsTable)
-        chainsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 19, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+        chainsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 4, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         //chainsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 20, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         
         let layout:CHTCollectionViewWaterfallLayout = CHTCollectionViewWaterfallLayout()
@@ -123,7 +123,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 20
+        return 5
     }
     
     
@@ -145,8 +145,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             cell.backgroundColor = UIColor.whiteColor()
             
         }
-        
-       cell.textLabel?.text = String(indexPath.row)
+        cell.textLabel?.textAlignment = NSTextAlignment.Center
+       cell.textLabel?.text = "MAIN CHAIN"
     
         
         return cell
