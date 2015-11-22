@@ -26,14 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootNavController.view.backgroundColor = UIColor.clearColor()
         
         
-        menuVC = MenuViewController()
+        /*menuVC = MenuViewController()
         menuNavController = UINavigationController(rootViewController: menuVC!)
-        menuNavController.view.backgroundColor = UIColor.clearColor()
+        menuNavController.view.backgroundColor = UIColor.clearColor()*/
         
         let frame = UIScreen.mainScreen().bounds
         window = UIWindow(frame: frame)
         
-        window!.rootViewController = initialViewController
+        window!.rootViewController = rootNavController
         window!.makeKeyAndVisible()
         
         return true

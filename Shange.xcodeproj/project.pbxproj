@@ -39,6 +39,7 @@
 		C1BC0E1F1BE7F81800839C7A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1BC0E0A1BE7F5F000839C7A /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1BC0E231BE7F82600839C7A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1BC0DF31BE7F5DE00839C7A /* ReactiveCocoa.framework */; };
 		C1BC0E241BE7F82600839C7A /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1BC0DF31BE7F5DE00839C7A /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1D16C721C011C5100B5368D /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D16C711C011C5100B5368D /* WalkthroughViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C1F53C861BEA8DCB00A4FD2E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F53C851BEA8DCB00A4FD2E /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -245,6 +246,7 @@
 		C19E07C11BE2A94D004154FE /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		C1BC0DE51BE7F5DE00839C7A /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ReactiveCocoa/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		C1BC0DFA1BE7F5F000839C7A /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = ReactiveCocoa/Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
+		C1D16C711C011C5100B5368D /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		C1F53C851BEA8DCB00A4FD2E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -366,6 +368,7 @@
 				C19E07BF1BE2A845004154FE /* StateMachine.swift */,
 				C19E07C11BE2A94D004154FE /* Defines.h */,
 				C1F53C851BEA8DCB00A4FD2E /* MenuViewController.swift */,
+				C1D16C711C011C5100B5368D /* WalkthroughViewController.swift */,
 			);
 			path = Shange;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				C107A3D71BE074540027DAD6 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C107A3D31BE074540027DAD6 /* UIAlertView+AFNetworking.m in Sources */,
 				C10B80E21BD9CDD00044F2CD /* ViewController.swift in Sources */,
+				C1D16C721C011C5100B5368D /* WalkthroughViewController.swift in Sources */,
 				C107A3CC1BE074540027DAD6 /* AFSecurityPolicy.m in Sources */,
 				C10B80E01BD9CDD00044F2CD /* AppDelegate.swift in Sources */,
 				C1F53C861BEA8DCB00A4FD2E /* MenuViewController.swift in Sources */,
@@ -829,6 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Shange/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muski.Shange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -842,6 +847,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Shange/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muski.Shange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
