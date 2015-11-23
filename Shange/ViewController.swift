@@ -76,7 +76,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     func unloadScreen()
     {
         walkthrough.dismissViewControllerAnimated(true) { () -> Void in
-            
+            self.navigationController!.presentViewController(self.authView, animated: true, completion: { () -> Void in
+                
+            })
         }
     }
 

@@ -19,7 +19,7 @@ class AuthViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var tableView:UITableView!
     
     var delegate: AuthViewControllerDelegate?
-    
+    var phoneNumber:UITextField!
     var emailTF:UITextField!
     var passTF:UITextField!
     var passAgainTF:UITextField!
@@ -27,16 +27,16 @@ class AuthViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tableRect = CGRect(x: (self.view.frame.size.width - 300)/2, y: (self.view.frame.size.height - 240) / 2, width: 300, height: 240)
-        tableView = UITableView(frame: tableRect, style: UITableViewStyle.Plain)
+        //let tableRect = CGRect(x: (self.view.frame.size.width - 300)/2, y: (self.view.frame.size.height - 240) / 2, width: 300, height: 240)
+        tableView = UITableView(frame: self.view.frame, style: UITableViewStyle.Plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.backgroundColor = UIColor.whiteColor()
         //tableView.scrollEnabled  = false
         tableView.tableHeaderView = nil
         tableView.tableFooterView = nil
         tableView.backgroundView = nil
-        tableView.layer.cornerRadius = 10.0
         self.view.addSubview(tableView)
     }
 
@@ -53,7 +53,7 @@ class AuthViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 3
     }
     
 
@@ -82,7 +82,7 @@ class AuthViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         if(indexPath.row == 0){
-            cell.textLabel?.text = NSLocalizedString("EMail:", comment: "")
+            cell.textLabel?.text = NSLocalizedString("Country:", comment: "")
             emailTF = UITextField(frame: CGRect(x: 0,y: 0,width: 200,height: cell.frame.size.height))
             emailTF.backgroundColor = UIColor.clearColor()
             emailTF.font = UIFont(name: "HelveticaNeue", size: 14)
@@ -92,28 +92,17 @@ class AuthViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.accessoryView = emailTF
         }
         else if(indexPath.row == 1){
-            cell.textLabel?.text = NSLocalizedString("Password:", comment: "")
-            passTF = UITextField(frame: CGRect(x: 0,y: 0,width: 200,height: cell.frame.size.height))
-            passTF.backgroundColor = UIColor.clearColor()
-            passTF.font = UIFont(name: "HelveticaNeue", size: 14)
-            passTF.secureTextEntry = true
-            passTF.layer.borderWidth = 0.5
-            passTF.layer.borderColor = UIColor.lightGrayColor().CGColor
-            passTF.layer.cornerRadius = 10.0
-            cell.accessoryView = passTF
+            cell.textLabel?.text = NSLocalizedString("Phone Number:", comment: "")
+            phoneNumber = UITextField(frame: CGRect(x: 0,y: 0,width: 200,height: cell.frame.size.height))
+            phoneNumber.backgroundColor = UIColor.clearColor()
+            phoneNumber.font = UIFont(name: "HelveticaNeue", size: 14)
+            phoneNumber.secureTextEntry = true
+            phoneNumber.layer.borderWidth = 0.5
+            phoneNumber.layer.borderColor = UIColor.lightGrayColor().CGColor
+            phoneNumber.layer.cornerRadius = 10.0
+            cell.accessoryView = phoneNumber
         }
         else if(indexPath.row == 2){
-            cell.textLabel?.text = NSLocalizedString("Retype:", comment: "")
-            passAgainTF = UITextField(frame: CGRect(x: 0,y: 0,width: 200,height: cell.frame.size.height))
-            passAgainTF.backgroundColor = UIColor.clearColor()
-            passAgainTF.font = UIFont(name: "HelveticaNeue", size: 14)
-            passAgainTF.layer.borderWidth = 0.5
-            passAgainTF.secureTextEntry = true
-            passAgainTF.layer.borderColor = UIColor.lightGrayColor().CGColor
-            passAgainTF.layer.cornerRadius = 10.0
-            cell.accessoryView = passAgainTF
-        }
-        else if(indexPath.row == 3){
             cell.textLabel?.textAlignment = NSTextAlignment.Center
             cell.textLabel?.text = NSLocalizedString("SIGN IN", comment: "")
         }
